@@ -1,5 +1,7 @@
+---
 kind: pipeline
-name: default
+type: kubernetes
+name: spring-hell-world-drone
 
 steps:
 - name: test

@@ -6,3 +6,6 @@ Article link : https://www.mkyong.com/spring-boot/spring-rest-hello-world-exampl
 ```
 $ curl -v localhost:8080/books
 ```
+
+## Status Projeto
+[![Build Status](http://drone.manager.quarks-ecosystem.io/api/badges/pedrofolim/spring-hello-world-drone/status.svg)](http://drone.manager.quarks-ecosystem.io/pedrofolim/spring-hello-world-drone)

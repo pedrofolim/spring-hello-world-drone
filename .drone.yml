@@ -4,8 +4,11 @@ type: kubernetes
 name: spring-hell-world-drone
 
 steps:
-- name: test
+- name: Build
   image: maven:3-jdk-8
   commands:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true
-  - mvn test
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- name: Test
+  image: maven:3-jdk-8
+  commands:
+  - mvn test -B

@@ -57,6 +57,10 @@ public class BookController {
     // update author only
     @PatchMapping("/books/{id}")
     Book patch(@RequestBody Map<String, String> update, @PathVariable Long id) {
+        
+        if(true) {
+           System.out.println("teste");
+        }
 
         return repository.findById(id)
                 .map(x -> {

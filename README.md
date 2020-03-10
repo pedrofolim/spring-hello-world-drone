@@ -11,13 +11,12 @@ $ curl -v localhost:8080/books
 [![Build Status](http://drone.manager.quarks-ecosystem.io/api/badges/pedrofolim/spring-hello-world-drone/status.svg)](http://drone.manager.quarks-ecosystem.io/pedrofolim/spring-hello-world-drone)
 
 Atividades:
-* [x] clone   # [checkbox:checked]
-* [x] build   # [checkbox:checked]
-* [X] test   # [checkbox:checked]
-* [X] cache   # [checkbox:checked]
-* [X] test   # [checkbox:checked]
-* [X] push kaniko   # [checkbox:checked]
-* [X] sonar   # [checkbox:checked]
-* [X] analise vulnerabilidade   # [checkbox:checked]
-* [X] notificações   # [checkbox:checked]
-* [X] deploy argo   # [checkbox:checked]
+* [x] clone
+* [x] build
+* [X] test
+* [ ] cache
+* [ ] push kaniko
+* [ ] sonar
+* [ ] analise vulnerabilidade
+* [ ] notificações
+* [ ] deploy argo

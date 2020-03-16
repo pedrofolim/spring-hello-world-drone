@@ -4,21 +4,21 @@ type: kubernetes
 name: spring-hell-world-drone
 
 steps:
-- name: restore-cache
-    image: meltwater/drone-cache:dev
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    pull: true
-    settings:
-      restore: true
-      bucket: voyager/maven-cache
-      path-style: true
-      region: none
-      mount:
-        - '/root/.m2'
+ - name: restore-cache
+   image: meltwater/drone-cache:dev
+   environment:
+     AWS_ACCESS_KEY_ID:
+       from_secret: aws_access_key_id
+     AWS_SECRET_ACCESS_KEY:
+       from_secret: aws_secret_access_key
+   pull: true
+   settings:
+     restore: true
+     bucket: voyager/maven-cache
+     path-style: true
+     region: none
+     mount:
+       - '/root/.m2'
   image: maven:3-jdk-8
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
@@ -30,21 +30,21 @@ steps:
   - echo "ROOT"
   - ls -a /root
 - name: rebuild-cache
-    image: meltwater/drone-cache:dev
-    pull: true
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    settings:
-      rebuild: true
-      endpoint: http://minio.default.svc:9000
-      bucket: voyager/maven-cache
-      path-style: true
-      region: none
-      mount:
-        - '/root/.m2'
+  image: meltwater/drone-cache:dev
+  pull: true
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: aws_access_key_id
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: aws_secret_access_key
+  settings:
+    rebuild: true
+    endpoint: http://minio.default.svc:9000
+    bucket: voyager/maven-cache
+    path-style: true
+    region: none
+    mount:
+      - '/root/.m2'
 - name: code-analysis
   image: aosapps/drone-sonar-plugin
   environment:

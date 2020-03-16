@@ -14,8 +14,7 @@ steps:
     access_key: AKIAIOSFODNN7EXAMPLE
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     restore: true
-    mount:
-      - /root/.m2/repository
+    workdir: /root/.m2/repository
 - name: build
   image: maven:3-jdk-8
   commands:

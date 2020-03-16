@@ -8,7 +8,7 @@ steps:
   image: plugins/s3-cache
   settings:
     pull: true
-    endpoint: minio.default.svc
+    endpoint: http://minio.default.svc:9000
     access_key: AKIAIOSFODNN7EXAMPLE
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     restore: true
@@ -24,7 +24,7 @@ steps:
   image: plugins/s3-cache
   settings:
     pull: true
-    endpoint: minio.default.svc
+    endpoint: http://minio.default.svc:9000
     access_key: AKIAIOSFODNN7EXAMPLE
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     rebuild: true

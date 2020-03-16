@@ -15,7 +15,7 @@ steps:
   settings:
     restore: true
     endpoint: http://minio.default.svc:9000
-    bucket: voyager/maven-cache
+    bucket: voyager
     path-style: true
     region: none
     mount:
@@ -45,7 +45,7 @@ steps:
   settings:
     rebuild: true
     endpoint: http://minio.default.svc:9000
-    bucket: voyager/maven-cache
+    bucket: voyager
     path-style: true
     region: none
     mount:

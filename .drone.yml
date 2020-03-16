@@ -9,9 +9,13 @@ steps:
   settings:
     pull: true
     endpoint: http://minio.default.svc:9000
+    root: voyager
+    path: maven-cache
     access_key: AKIAIOSFODNN7EXAMPLE
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     restore: true
+    mount:
+      - /root/.m2/repository
 - name: build
   image: maven:3-jdk-8
   commands:
@@ -25,11 +29,13 @@ steps:
   settings:
     pull: true
     endpoint: http://minio.default.svc:9000
+    root: voyager
+    path: maven-cache
     access_key: AKIAIOSFODNN7EXAMPLE
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     rebuild: true
     mount:
-      - .m2
+      - /root/.m2/repository
     when:
       event: push
 - name: code-analysis

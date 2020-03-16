@@ -4,6 +4,21 @@ type: kubernetes
 name: spring-hell-world-drone
 
 steps:
+- name: restore-cache
+  image: meltwater/drone-cache:dev
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: aws_access_key_id
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: aws_secret_access_key
+  pull: true
+  settings:
+    restore: true
+    endpoint: minio.default.svc
+    path-style: true
+    bucket: voyager/maven-cache
+    mount:
+      - 'vendor'
 - name: Build
   image: maven:3-jdk-8
   commands:

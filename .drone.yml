@@ -19,14 +19,29 @@ steps:
     bucket: voyager/maven-cache
     mount:
       - 'vendor'
-- name: Build
+- name: build
   image: maven:3-jdk-8
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-- name: Test
+- name: test
   image: maven:3-jdk-8
   commands:
   - mvn test -B
+- name: rebuild-cache
+  image: meltwater/drone-cache:dev
+  pull: true
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: aws_access_key_id
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: aws_secret_access_key
+  settings:
+    rebuild: true
+    endpoint: minio.default.svc
+    path-style: true
+    bucket: voyager/maven-cache
+    mount:
+      - 'vendor'
 - name: code-analysis
   image: aosapps/drone-sonar-plugin
   environment:

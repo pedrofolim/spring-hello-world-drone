@@ -5,7 +5,7 @@ name: spring-hell-world-drone
 
 steps:
  - name: restore-cache
-   image: meltwater/drone-cache:dev
+   image: meltwater/drone-cache
    environment:
      AWS_ACCESS_KEY_ID:
        from_secret: aws_access_key_id
@@ -18,7 +18,8 @@ steps:
      path-style: true
      region: none
      mount:
-        - '/root/.m2'
+       - '/root/.m2'
+- name: build
   image: maven:3-jdk-8
   commands:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V

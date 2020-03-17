@@ -36,7 +36,7 @@ steps:
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     rebuild: true
     mount:
-      - '/root/.m2'
+      - 'src'
     when:
       event: push
       

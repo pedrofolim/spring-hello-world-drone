@@ -14,9 +14,9 @@ Atividades:
 * [x] clone
 * [x] build
 * [X] test
-* [ ] cache
+* [X] cache
 * [ ] push kaniko
-* [ ] sonar
+* [X] sonar
 * [ ] analise vulnerabilidade
 * [ ] notificações
 * [ ] deploy argo

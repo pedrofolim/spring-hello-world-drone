@@ -23,7 +23,7 @@ steps:
 - name: test
   image: maven:3-jdk-8
   commands:
-  - mvn test -B
+  #- mvn test -B
   - ls -a
   - echo "ROOT"
   - ls -a /root
@@ -38,7 +38,7 @@ steps:
     secret_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
     rebuild: true
     mount:
-      - 'src'
+      - '/root/.m2/repository'
     when:
       event: push
       

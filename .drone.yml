@@ -9,6 +9,7 @@ steps:
   image: plugins/s3-cache
   settings:
     root: spring-hello-world-drone
+    path: maven-cache
     pull: true
     endpoint: http://minio.default.svc:9000
     access_key: AKIAIOSFODNN7EXAMPLE
@@ -46,6 +47,7 @@ steps:
   image: plugins/s3-cache
   settings:
     root: spring-hello-world-drone
+    path: maven-cache
     pull: true
     endpoint: http://minio.default.svc:9000
     access_key: AKIAIOSFODNN7EXAMPLE

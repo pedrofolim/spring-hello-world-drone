@@ -8,8 +8,7 @@ steps:
 - name: restore-cache
   image: plugins/s3-cache
   settings:
-    root: spring-hello-world-drone
-    path: maven-cache
+    path: spring-hello-world-drone/maven-cache
     pull: true
     endpoint: http://minio.default.svc:9000
     access_key: AKIAIOSFODNN7EXAMPLE
@@ -46,8 +45,7 @@ steps:
 - name: rebuild-cache
   image: plugins/s3-cache
   settings:
-    root: spring-hello-world-drone
-    path: maven-cache
+    path: spring-hello-world-drone/maven-cache
     pull: true
     endpoint: http://minio.default.svc:9000
     access_key: AKIAIOSFODNN7EXAMPLE

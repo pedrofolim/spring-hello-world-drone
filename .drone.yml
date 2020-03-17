@@ -24,7 +24,6 @@ steps:
   image: maven:3-jdk-8
   commands:
   - ls -a .m2
-  - ls -a .m2/repository
   
 - name: rebuild
   image: plugins/s3-cache
